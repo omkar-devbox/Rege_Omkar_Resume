@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Omkar Adhir Rege - Professional Resume</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 0;
+      }
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 10pt; /* Optimized for more content */
+        line-height: 1.35;
+        color: #333;
+        margin: 0 auto;
+        background: #fff;
+        width: 210mm;
+        min-height: 297mm;
+        box-sizing: border-box;
+        padding: 40px 50px;
+      }
+
+      /* --- COLORS --- */
+      :root {
+        --primary-color: #0f2c4c; /* Deep Corporate Blue */
+        --accent-color: #2c6e91;
+        --border-color: #e0e0e0;
+        --text-muted: #666;
+      }
+
+      /* --- HEADER --- */
+      header {
+        border-bottom: 2px solid var(--primary-color);
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+      }
+      h1 {
+        margin: 0;
+        font-size: 24pt;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--primary-color);
+        font-weight: 800;
+      }
+      .role {
+        font-size: 12pt;
+        font-weight: 500;
+        color: var(--text-muted);
+        margin-top: 5px;
+        margin-bottom: 10px;
+      }
+      .contact-row {
+        font-size: 9pt;
+        color: #444;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 5px;
+      }
+      .contact-row a {
+        color: var(--accent-color);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .contact-row span {
+        color: #ccc;
+      }
+
+      /* --- SECTIONS --- */
+      h3 {
+        font-size: 10.5pt;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        color: var(--primary-color);
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 4px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      p {
+        margin: 0 0 8px 0;
+        text-align: justify;
+      }
+
+      /* --- LISTS --- */
+      ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+      li {
+        margin-bottom: 2px;
+      }
+
+      /* --- SKILLS --- */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3px;
+      }
+      .skill-item {
+        font-size: 9.5pt;
+      }
+      .skill-label {
+        font-weight: 700;
+        color: #222;
+        margin-right: 5px;
+      }
+
+      /* --- EXPERIENCE ITEMS --- */
+      .job-block {
+        margin-bottom: 12px;
+      }
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 2px;
+      }
+      .company {
+        font-weight: 700;
+        font-size: 10.5pt;
+        color: #000;
+      }
+      .location {
+        font-size: 9pt;
+        color: var(--text-muted);
+        font-style: italic;
+      }
+
+      .job-sub {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 3px;
+        color: var(--primary-color);
+        font-weight: 600;
+        font-size: 9.5pt;
+      }
+
+      /* --- PROJECTS --- */
+      .project-block {
+        margin-bottom: 10px;
+      }
+      .project-title {
+        font-weight: 700;
+        color: #000;
+        font-size: 10pt;
+      }
+      .project-role {
+        font-style: italic;
+        color: var(--text-muted);
+        font-size: 9pt;
+        font-weight: normal;
+      }
+
+      /* --- EDUCATION TABLE --- */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 9pt;
+        margin-top: 5px;
+      }
+      th {
+        text-align: left;
+        font-weight: 700;
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--border-color);
+        padding: 4px 4px;
+        font-size: 8.5pt;
+        text-transform: uppercase;
+      }
+      td {
+        padding: 6px 4px;
+        border-bottom: 1px solid #f0f0f0;
+        color: #333;
+      }
+      tr:last-child td {
+        border-bottom: none;
+      }
+      .text-right {
+        text-align: right;
+      }
+
+      /* --- PERSONAL DETAILS --- */
+      .personal-details {
+        margin-top: 15px;
+        padding-top: 10px;
+        border-top: 1px dotted var(--border-color);
+        font-size: 9pt;
+        color: var(--text-muted);
+        display: flex;
+        gap: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Omkar Adhir Rege</h1>
+      <div class="role">
+        Software Engineer | Full Stack & Backend Specialist
+      </div>
+      <div class="contact-row">
+        Pune, Maharashtra
+        <span>|</span>
+        +91-7030048485
+        <span>|</span>
+        <a href="mailto:omkarrege8@gmail.com">omkarrege8@gmail.com</a>
+        <span>|</span>
+        <a href="https://linkedin.com/in/omkar-rege/">LinkedIn</a>
+        <span>|</span>
+        <a href="https://github.com/omkar-devbox">GitHub</a>
+      </div>
+    </header>
+
+    <div class="section">
+      <h3>Professional Summary</h3>
+      <p>
+        Software Engineer with 3+ years of experience in Full Stack and Backend
+        development. Proficient in Python (FastAPI, Flask), Node.js, and
+        frontend technologies like React.js and Angular. Experienced in
+        designing RESTful APIs, microservices architectures, and integrating
+        specialized systems such as Genesys Voice Gateway. Strong background in
+        engineering automation, large-scale data migrations (28Cr+ records), and
+        industrial automation.
+      </p>
+    </div>
+
+    <div class="section">
+      <h3>Technical Skills</h3>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <span class="skill-label">Languages & Frameworks:</span> Python
+          (FastAPI, Flask), Node.js, NestJS, JavaScript/TypeScript
+        </div>
+        <div class="skill-item">
+          <span class="skill-label">Frontend:</span> React.js, Angular, Tailwind
+          CSS
+        </div>
+        <div class="skill-item">
+          <span class="skill-label">Architecture:</span> RESTful APIs,
+          Microservices, GraphQL, WebSockets, SIP Protocols
+        </div>
+        <div class="skill-item">
+          <span class="skill-label">Databases:</span> Snowflake, MySQL 8+,
+          PostgreSQL, MongoDB, SQLite
+        </div>
+        <div class="skill-item">
+          <span class="skill-label">DevOps & Tools:</span> Docker, GitHub,
+          GitLab, Nginx, SonarQube
+        </div>
+        <div class="skill-item">
+          <span class="skill-label">Industrial Automation:</span> Siemens TIA
+          Portal, Rockwell Studio 5000
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Professional Experience</h3>
+
+      <div class="job-block">
+        <div class="job-header">
+          <span class="company">TechLeaper Systems Pvt. Ltd.</span>
+          <span class="location">Pune (Hybrid)</span>
+        </div>
+        <div class="job-sub">
+          <span>Full Stack Engineer</span>
+          <span>Aug 2025 – Present</span>
+        </div>
+        <ul>
+          <li>
+            Focusing on Full Stack development using Python (FastAPI, Flask) and
+            modern frontend frameworks to deliver scalable web solutions.
+          </li>
+        </ul>
+      </div>
+
+      <div class="job-block">
+        <div class="job-header">
+          <span class="company">AMCA</span>
+          <span class="location">Pune (On-site)</span>
+        </div>
+        <div class="job-sub">
+          <span>Back End Developer</span>
+          <span>Mar 2024 – Aug 2025</span>
+        </div>
+        <ul>
+          <li>
+            Specialized in backend systems integration and industrial automation
+            utilizing Siemens TIA Portal and Rockwell Studio 5000.
+          </li>
+        </ul>
+      </div>
+
+      <div class="job-block">
+        <div class="job-header">
+          <span class="company">PILON CONNECTED SOLUTIONS PVT. LTD.</span>
+          <span class="location">Pune (On-site)</span>
+        </div>
+        <div class="job-sub">
+          <span>PLC Programmer</span>
+          <span>Apr 2023 – Apr 2024</span>
+        </div>
+        <ul>
+          <li>
+            Focused on core industrial automation logic and programming using
+            Siemens TIA Portal and Rockwell Studio 5000.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Key Projects</h3>
+
+      <div class="project-block">
+        <div class="project-title">
+          IQVIA Large Data Migration
+          <span class="project-role">(Lead Developer)</span>
+        </div>
+        <ul>
+          <li>
+            Orchestrated the end-to-end migration of
+            <strong>~28 crore records</strong> for a major healthcare client,
+            facilitating a seamless transition between Oracle, Salesforce, and
+            Snowflake.
+          </li>
+          <li>
+            Engineered custom Python ETL processes with parallel processing to
+            maximize throughput, minimize downtime, and ensure data consistency.
+          </li>
+          <li>
+            Implemented rigorous validation frameworks to verify data accuracy
+            across systems, achieving near-zero data loss during cutover.
+          </li>
+        </ul>
+      </div>
+
+      <div class="project-block">
+        <div class="project-title">
+          Healthcare Analytics Data Modernization
+          <span class="project-role">(Sr. Developer)</span>
+        </div>
+        <ul>
+          <li>
+            Architected a centralized data integration layer to consolidate
+            disparate data sources into a scalable Snowflake Data Warehouse.
+          </li>
+          <li>
+            Built secure, non-blocking REST APIs using
+            <strong>Python/FastAPI</strong> to enable near real-time data
+            ingestion for analytics dashboards.
+          </li>
+          <li>
+            Developed automated monitoring and audit logging mechanisms to
+            ensure high availability and compliance with data reliability
+            standards.
+          </li>
+        </ul>
+      </div>
+
+      <div class="project-block">
+        <div class="project-title">
+          Genesys Voice Gateway Implementation
+          <span class="project-role">(Python Integration)</span>
+        </div>
+        <ul>
+          <li>
+            Designed a custom middleware using Python to integrate Genesys Voice
+            Gateway with internal business logic for robust voice flows.
+          </li>
+          <li>
+            Developed intelligent automation services and
+            <strong>SIP-based call routing</strong>, enhancing the platform's
+            ability to handle high call volumes dynamically.
+          </li>
+          <li>
+            Optimized payload processing and task management, significantly
+            improving real-time system performance and scalability.
+          </li>
+        </ul>
+      </div>
+
+      <div class="project-block">
+        <div class="project-title">
+          Mechanical Valve Calculator
+          <span class="project-role">(Full Stack Engineer)</span>
+        </div>
+        <ul>
+          <li>
+            Built an end-to-end valve sizing application using
+            <strong>Angular, Node.js, and PostgreSQL</strong> to streamline
+            complex engineering calculations.
+          </li>
+          <li>
+            Implemented a precision-focused backend engine to handle fluid
+            dynamics formulas (Cv, ΔP) for both compressible and incompressible
+            fluids.
+          </li>
+          <li>
+            Designed a responsive UI with real-time validation to eliminate
+            manual errors and ensure adherence to industry standards.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Education</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Degree</th>
+            <th>Institute / Board</th>
+            <th>Year</th>
+            <th class="text-right">Percentage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>MCA (Master of Computer Applications)</td>
+            <td>Pune University</td>
+            <td>April 2017</td>
+            <td class="text-right">71.53%</td>
+          </tr>
+          <tr>
+            <td>BCA (Bachelor of Computer Applications)</td>
+            <td>Pune University</td>
+            <td>April 2014</td>
+            <td class="text-right">52.33%</td>
+          </tr>
+          <tr>
+            <td>HSC (12th)</td>
+            <td>Maharashtra State Board</td>
+            <td>March 2008</td>
+            <td class="text-right">81.17%</td>
+          </tr>
+          <tr>
+            <td>SSC (10th)</td>
+            <td>Maharashtra State Board</td>
+            <td>Feb 2006</td>
+            <td class="text-right">63.86%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="personal-details">
+      <span><strong>Date of Birth:</strong> 01 Jan 2001</span>
+      <span><strong>Languages:</strong> English, Marathi, Hindi</span>
+    </div>
+  </body>
+</html>
