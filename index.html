@@ -29,11 +29,22 @@
         --text-muted: #666;
       }
 
+      /* --- UTILS --- */
+      .page-break {
+        break-before: always;
+        page-break-before: always;
+      }
+      .no-break {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
       /* --- HEADER --- */
       header {
         border-bottom: 2px solid var(--primary-color);
         padding-bottom: 15px;
         margin-bottom: 15px;
+        position: relative;
       }
       h1 {
         margin: 0;
@@ -66,6 +77,38 @@
       .contact-row span {
         color: #ccc;
       }
+      .download-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        color: white;
+        padding: 8px 16px;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 9pt;
+        font-weight: 600;
+        transition: background-color 0.2s;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .download-btn:hover {
+        background-color: var(--accent-color);
+      }
+      .download-btn svg {
+        width: 14px;
+        height: 14px;
+        fill: currentColor;
+      }
+      @media print {
+        .download-btn {
+          display: none;
+        }
+        .page-break {
+          margin-top: 80px;
+        }
+      }
 
       /* --- SECTIONS --- */
       h3 {
@@ -97,8 +140,8 @@
       /* --- SKILLS --- */
       .skills-grid {
         display: grid;
-        grid-template-columns: 1fr;
-        gap: 3px;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px 20px;
       }
       .skill-item {
         font-size: 9.5pt;
@@ -112,6 +155,8 @@
       /* --- EXPERIENCE ITEMS --- */
       .job-block {
         margin-bottom: 12px;
+        page-break-inside: avoid; /* Legacy support */
+        break-inside: avoid;
       }
       .job-header {
         display: flex;
@@ -142,6 +187,8 @@
       /* --- PROJECTS --- */
       .project-block {
         margin-bottom: 10px;
+        page-break-inside: avoid; /* Legacy support */
+        break-inside: avoid;
       }
       .project-title {
         font-weight: 700;
@@ -198,9 +245,14 @@
   <body>
     <header>
       <h1>Omkar Adhir Rege</h1>
-      <div class="role">
-        Software Engineer | Full Stack & Backend Specialist
-      </div>
+      <a href="#" class="download-btn" onclick="return false;">
+        <svg viewBox="0 0 24 24">
+          <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+        </svg>
+        Download PDF
+      </a>
+      <div class="role">Software Engineer | Backend & Full-Stack Developer</div>
+
       <div class="contact-row">
         Pune, Maharashtra
         <span>|</span>
@@ -217,13 +269,12 @@
     <div class="section">
       <h3>Professional Summary</h3>
       <p>
-        Software Engineer with 3+ years of experience in Full Stack and Backend
-        development. Proficient in Python (FastAPI, Flask), Node.js, and
-        frontend technologies like React.js and Angular. Experienced in
-        designing RESTful APIs, microservices architectures, and integrating
-        specialized systems such as Genesys Voice Gateway. Strong background in
-        engineering automation, large-scale data migrations (28Cr+ records), and
-        industrial automation.
+        Software Engineer with 3+ years of experience building scalable backend
+        systems and full-stack applications using Python (FastAPI, Flask) and
+        Node.js. Skilled in designing RESTful APIs, microservices architectures,
+        and integrating enterprise systems such as Genesys Voice Gateway.
+        Experienced in large-scale data migrations (28Cr+ records) and
+        industrial automation solutions.
       </p>
     </div>
 
@@ -271,8 +322,16 @@
         </div>
         <ul>
           <li>
-            Focusing on Full Stack development using Python (FastAPI, Flask) and
-            modern frontend frameworks to deliver scalable web solutions.
+            Designed and developed scalable REST APIs using FastAPI, supporting
+            high-performance web applications.
+          </li>
+          <li>
+            Built responsive frontend features using React/Angular, improving
+            application usability.
+          </li>
+          <li>
+            Optimized backend performance and database queries to enhance system
+            responsiveness.
           </li>
         </ul>
       </div>
@@ -288,8 +347,16 @@
         </div>
         <ul>
           <li>
-            Specialized in backend systems integration and industrial automation
-            utilizing Siemens TIA Portal and Rockwell Studio 5000.
+            Developed backend integrations between industrial automation systems
+            and enterprise platforms.
+          </li>
+          <li>
+            Automated data workflows, improving operational efficiency and
+            reducing manual processes.
+          </li>
+          <li>
+            Built system interfaces using Python and industrial communication
+            standards.
           </li>
         </ul>
       </div>
@@ -305,8 +372,12 @@
         </div>
         <ul>
           <li>
-            Focused on core industrial automation logic and programming using
-            Siemens TIA Portal and Rockwell Studio 5000.
+            Programmed PLC logic using Siemens TIA Portal and Rockwell Studio
+            5000 for industrial automation systems.
+          </li>
+          <li>
+            Improved system reliability and operational precision in
+            manufacturing environments.
           </li>
         </ul>
       </div>
@@ -361,7 +432,7 @@
         </ul>
       </div>
 
-      <div class="project-block">
+      <div class="project-block page-break">
         <div class="project-title">
           Genesys Voice Gateway Implementation
           <span class="project-role">(Python Integration)</span>
@@ -451,5 +522,51 @@
       <span><strong>Date of Birth:</strong> 01 Jan 2001</span>
       <span><strong>Languages:</strong> English, Marathi, Hindi</span>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+      function downloadPDF() {
+        const element = document.body;
+        const opt = {
+          margin: 0,
+          filename: "Rege_Omkar_Resume.pdf",
+          image: { type: "jpeg", quality: 0.98 },
+          html2canvas: { scale: 2, scrollY: 0 },
+          jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+          pagebreak: { mode: ["css", "legacy"] },
+        };
+
+        // Clone the body to render the PDF content
+        const clone = element.cloneNode(true);
+
+        // Remove the download button from the PDF
+        const btn = clone.querySelector(".download-btn");
+        if (btn) btn.remove();
+
+        // Reset styles on the clone to prevent forced dimensions causing blank pages
+        clone.style.width = "100%";
+        clone.style.height = "auto";
+        clone.style.minHeight = "auto";
+        clone.style.margin = "0 auto";
+        clone.style.padding = "20px"; // Reduce padding for PDF version if needed, or keep consistent
+
+        // Apply print-specific styles (margin-top for page breaks)
+        // Apply print-specific styles (margin-top for page breaks)
+        const pageBreaks = clone.querySelectorAll(".page-break");
+        pageBreaks.forEach((el) => {
+          el.style.setProperty("padding-top", "40px", "important");
+          el.style.setProperty("page-break-before", "always", "important");
+          el.style.display = "block"; // Ensure it behaves as a block element
+        });
+
+        html2pdf().set(opt).from(clone).save();
+      }
+
+      document
+        .querySelector(".download-btn")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          downloadPDF();
+        });
+    </script>
   </body>
 </html>
